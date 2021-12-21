@@ -1,0 +1,29 @@
+using System;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace Zadanie_8__1_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите сообщение:");
+            StringBuilder text = new StringBuilder(Console.ReadLine());
+            
+            if (text.Length > 0)
+            {
+                Console.WriteLine();
+
+                string rex = @"[a-zA-Z]+"; // рег. выраж-е
+
+                string str = text.ToString();
+
+                string str2 = Regex.Replace(str, rex, "...");
+                Console.WriteLine(str2);
+            }
+            else
+                Console.WriteLine("Строка должна содержать минимум 1 символ.");
+        }
+    }
+}
